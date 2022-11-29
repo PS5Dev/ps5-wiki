@@ -1,7 +1,7 @@
 # (string) Title of your wiki
-title: 
+title: PS5 Wiki
 # (string) Description of your wiki
-description: 
+description: A beginner friendly wiki for PS5 research and development.
 # (boolean) disable edit functionalities (edit/delete/add pages)
 disable_edit: false
 # (boolean) Enable/disable wiki page list in sidebar
