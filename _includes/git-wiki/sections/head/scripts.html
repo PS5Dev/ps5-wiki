@@ -1,0 +1,58 @@
+{% if site.inc_before_scripts %}
+{% include {{ site.inc_before_scripts }} %}
+{% endif %}
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+<script src="{{ '/assets/js/checkLinks.js' | relative_url }}"></script>
+<!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- dark mode -->
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+<script>
+  function darkModeSetBodyBg() {
+    if (localStorage.getItem('darkmode')==="true") {
+      console.log("darkmode activated");
+      document.body.style.backgroundColor = "black !important";
+    } else {
+      document.body.style.backgroundColor = ""; // reset background color
+    }
+  }
+
+  function addDarkmodeWidget() {
+
+    const options = {
+        label: '🌓', // default: ''
+        time: '0s'
+    }
+
+    new Darkmode(options).showWidget();
+
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = 1;
+  }
+
+  $(document).ready(addDarkmodeWidget);
+</script>
+
+{% if site.inc_after_scripts %}
+{% include {{ site.inc_after_scripts }} %}
+{% endif %}
