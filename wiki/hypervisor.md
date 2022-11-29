@@ -1,5 +1,5 @@
 # Hypervisor
-The PS5 utilizes a presumably custom hypervisor (HV) to protect the kernel. The hypervisor is a virtual machine monitor (VMM), where the kernel and userland applications (such as game) run in a guest OS. Hardware as well as the x86 kernel talk to the hypervisor through hypercalls and [memory-mapped I/O (MMIO)](https://en.wikipedia.org/wiki/Memory-mapped_I/O). It can be considered the highest privilege level for x86 on the system.
+The PS5 utilizes a presumably custom hypervisor (HV) to protect the kernel. The hypervisor is a virtual machine monitor (VMM), where the kernel and userland applications (such as games) run in a guest OS. Hardware as well as the x86 kernel talk to the hypervisor through hypercalls and [memory-mapped I/O (MMIO)](https://en.wikipedia.org/wiki/Memory-mapped_I/O). It can be considered the highest privilege level for x86 on the system.
 
 The more conventional use of a hypervisor is to run separate virtual machines on a host machine that are isolated from each other and can run their own guest operating systems. In the PS5s case, it's used primarily for Virtualization Based Security (VBS) to protect the kernel integrity.
 
